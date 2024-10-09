@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="product-detail">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>Price: ${{ product.price / 100 }}</p>
+        <form action="/checkout" method="POST">
+            <input type="hidden" name="product_id" value="{{ product.id }}">
+            <button type="submit">Buy Now</button>
+        </form>
+    </div>
+{% endblock %}

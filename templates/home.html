@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Welcome to the Shop</h2>
+    <div class="product-grid">
+        {% for product in products %}
+            <div class="product">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <p>Price: ${{ product.price / 100 }}</p>
+                <a href="/product/{{ product.id }}">View Product</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
